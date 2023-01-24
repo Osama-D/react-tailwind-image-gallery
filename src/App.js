@@ -39,9 +39,12 @@ function App() {
             alt="svg"
           />
         ) : (
-          <h1 className="m-14 text-center relative px-10  text-4xl before:absolute  before:left-1/2 before:-translate-x-1/2 before:translate-y-14 tall1:before:translate-y-24 tall2:before:translate-y-32 before:h-1 before:w-[10%] before:justify-center before:border-b-2 before:border-red font-semibold flex justify-center ">
-            See what’s trending
-          </h1>
+          <div className="px-4 flex justify-center items-center gap-y-4 flex-col w-fit m-auto">
+            <div className="mt-14 text-4xl tall:text-2xl font-semibold text-center ">
+              See what's trending
+            </div>
+            <div className="w-[50%] h-[2px] bg-red "></div>
+          </div>
         )}
         {isLoading ? (
           <div>
@@ -54,7 +57,7 @@ function App() {
           </div>
         ) : (
           <div className="">
-            <div className="flex mx-auto gap-10 justify-center flex-wrap mt-16">
+            <div className="flex mx-auto gap-10 justify-center flex-wrap mt-16 px-4">
               {images.map((image) => (
                 <ImageCard
                   key={image.id}
@@ -76,17 +79,17 @@ function App() {
       {isopen && (
         <div>
           <div className="fixed inset-0 bg-red bg-opacity-50 "></div>
-          <div className="fixed  top-0 left-0 w-[100%] h-[100%] flex justify-center items-center ">
+          <div className="fixed px-4 top-0 left-0 w-[100%] h-[100%] flex justify-center items-center ">
             <img
               src={selectedimage.webformatURL}
               alt="iamsd"
               className="max-h-[500px]"
             />
           </div>
-          <div className="bottom-80 left-0 w-[100%] rounded-full h-[100%] flex justify-center items-center fixed text-red text-4xl">
+          <div className="bottom-80 left-0 w-[100%] rounded h-[100%] flex justify-center items-center fixed text-red text-4xl">
             <AiOutlineClose
               onClick={() => setisopen(false)}
-              className="cursor-pointer text-6xl p-2 bg-white rounded-full "
+              className="cursor-pointer text-6xl p-2 bg-white rounded "
             />
           </div>
         </div>
