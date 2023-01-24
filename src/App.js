@@ -78,15 +78,18 @@ function App() {
       </div>
       {isopen && (
         <div>
-          <div className="fixed inset-0 bg-red bg-opacity-50 "></div>
-          <div className="fixed px-4 top-0 left-0 w-[100%] h-[100%] flex justify-center items-center ">
+          <div
+            onClick={() => setisopen(false)}
+            className="fixed inset-0 bg-red bg-opacity-70 z-10 "
+          />
+          <div className="z-20 fixed px-4 top-0 left-0 w-[100%] h-[100%] flex justify-center items-center ">
             <img
               src={selectedimage.webformatURL}
               alt="iamsd"
               className="max-h-[500px]"
             />
           </div>
-          <div className="bottom-80 left-0 w-[100%] rounded h-[100%] flex justify-center items-center fixed text-red text-4xl">
+          <div className="w-[100%] z-20 top-[10%] rounded flex justify-center items-center fixed text-red text-4xl">
             <AiOutlineClose
               onClick={() => setisopen(false)}
               className="cursor-pointer text-6xl p-2 bg-white rounded "
